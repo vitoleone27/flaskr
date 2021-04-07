@@ -18,13 +18,18 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-## Run
+## Initialize Database
 
 ```
 export FLASK_APP=flaskr
-export FLASK_ENV=development
 flask init-db
-flask run
+```
+
+
+## Launch Server
+
+```
+gunicorn --bind '0.0.0.0:5000' 'flaskr:create_app()'
 ```
 
 Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in a browser.
